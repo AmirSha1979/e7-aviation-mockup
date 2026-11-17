@@ -368,6 +368,23 @@
   .contact-big{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(36px,6vw,58px);line-height:1;color:var(--ink);text-decoration:none;display:inline-block;margin-top:18px}
   .contact-big:hover{color:var(--accent)}
   .page-head-note{padding:56px 0 0}
+
+  /* ---------- CREDENTIAL ROW (plain text, under hero) ---------- */
+  .cred-row{background:var(--surface);border-bottom:1px solid var(--line)}
+  .cred-row .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;padding-top:16px;padding-bottom:16px}
+  .cred-row span{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-dark);white-space:nowrap}
+  .cred-row i{width:1px;height:18px;background:var(--line);margin:0 22px;flex:none}
+  @media(max-width:640px){.cred-row span{font-size:11px;letter-spacing:.1em}.cred-row i{margin:0 11px;height:15px}}
+
+  /* ---------- CLOSING CTA BAND ---------- */
+  .cta-band{position:relative;min-height:350px;padding:0;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--navy)}
+  .cta-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+  .cta-band::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,33,51,.7),rgba(13,33,51,.84))}
+  .cta-band-inner{position:relative;z-index:1;padding:54px 20px;max-width:780px}
+  .cta-band h2{color:#fff;font-size:clamp(32px,5.4vw,52px)}
+  .cta-band p{color:#c7d6e2;font-size:18.5px;margin:14px 0 0}
+  .cta-band .btn{margin-top:26px}
+  @media(min-width:980px){.cta-band{min-height:380px}}
 </style>
 </head>
 <body>
@@ -480,6 +497,13 @@
     </div>
   </div>
 </section>
+
+<!-- CREDENTIAL ROW — plain text line under the hero -->
+<div class="cred-row" aria-label="Credentials">
+  <div class="wrap">
+    <span>Texas TAG Dealer</span><i aria-hidden="true"></i><span>Rotax IRMP Certified Technician 6824</span><i aria-hidden="true"></i><span>Covington, Texas</span>
+  </div>
+</div>
 
 <!-- CREDENTIAL STRIP -->
 <div class="cred" aria-label="Credentials">
@@ -1034,6 +1058,17 @@
 
 </div>
 </main>
+
+<!-- CLOSING CTA BAND — bottom of every view, above the footer -->
+<section class="cta-band" aria-label="Need an annual or service?">
+  <img src="data:image/webp;base64,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" alt="" aria-hidden="true" />
+  <div class="cta-band-inner">
+    <h2>Need an annual or service?</h2>
+    <p>Rotax-certified maintenance in Covington, Texas.</p>
+    <a class="btn btn-accent" href="tel:+18179396002">☎ Call (817) 939-6002</a>
+  </div>
+</section>
+
 <!-- 7 · CONTACT FOOTER -->
 <footer id="contact">
   <div class="wrap">
@@ -1129,7 +1164,18 @@
 
   /* Category page router — hash routing #/services etc. */
   (function () {
+    if ('scrollRestoration' in window.history) { window.history.scrollRestoration = 'manual'; }
     var pages = ['home','services','aircraft','preowned','gallery','contact'];
+    function scrollTopInstant() {
+      var doc = document.documentElement;
+      var prev = doc.style.scrollBehavior;
+      doc.style.scrollBehavior = 'auto';
+      try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); }
+      window.scrollTo(0, 0);
+      if (doc) doc.scrollTop = 0;
+      if (document.body) document.body.scrollTop = 0;
+      doc.style.scrollBehavior = prev;
+    }
     function parse() {
       var h = window.location.hash || '';
       if (h.indexOf('#/') !== 0) {
@@ -1160,13 +1206,36 @@
       if (r.anchor) {
         setTimeout(function () {
           var el = document.getElementById(r.anchor);
-          if (el) { el.scrollIntoView({block:'start'}); window.scrollBy(0, -92); } else { window.scrollTo(0,0); }
+          if (el) {
+            var doc = document.documentElement;
+            var prev = doc.style.scrollBehavior;
+            doc.style.scrollBehavior = 'auto';
+            try { el.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) { el.scrollIntoView({ block: 'start' }); }
+            window.scrollBy(0, -92);
+            doc.style.scrollBehavior = prev;
+          } else { scrollTopInstant(); }
         }, 40);
       } else {
-        window.scrollTo(0,0);
+        scrollTopInstant();
+        if (window.requestAnimationFrame) window.requestAnimationFrame(scrollTopInstant);
+        setTimeout(scrollTopInstant, 60);
+        setTimeout(scrollTopInstant, 350);
       }
     }
     window.addEventListener('hashchange', show);
+    /* Same-hash taps (e.g. HOME while already on #/home) fire no hashchange —
+       force the view switch + top scroll so they never land mid-page. */
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      var a = t && t.closest ? t.closest('a[href^="#"]') : null;
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (!href || href.charAt(0) !== '#') return;
+      if (href === window.location.hash) {
+        e.preventDefault();
+        show();
+      }
+    });
     show();
   })();
 </script>
