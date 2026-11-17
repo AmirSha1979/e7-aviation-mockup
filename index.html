@@ -298,6 +298,42 @@
   .gallery .tall{grid-row:span 2}
   .gallery .tall video{aspect-ratio:auto;height:100%;min-height:100%}
   .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 13px 11px;background:linear-gradient(transparent,rgba(10,25,38,.82));color:#fff;font-size:13.5px;font-weight:600}
+  .gallery figure{cursor:zoom-in}
+  .gallery figure:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .gallery figure img{cursor:zoom-in;transition:transform .35s ease}
+  /* Hover feedback: the photo gently zooms and a magnifier badge fades in,
+     so hovering visibly signals "click to view full screen" — not just the
+     cursor change. Touch devices have no hover; a tap opens the viewer. */
+  .gallery figure:hover img,.gallery figure:focus-visible img{transform:scale(1.06)}
+  .gallery figure::after{content:"";position:absolute;top:10px;right:10px;width:42px;height:42px;border-radius:50%;background:rgba(13,33,51,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5L21 21'/%3E%3Cpath d='M10.5 7.8v5.4M7.8 10.5h5.4'/%3E%3C/svg%3E") center/21px 21px no-repeat;opacity:0;transform:scale(.8);transition:opacity .25s ease,transform .25s ease;pointer-events:none;z-index:2}
+  .gallery figure:hover::after,.gallery figure:focus-visible::after{opacity:1;transform:scale(1)}
+  @media (hover:none){.gallery figure::after{display:none}.gallery figure:hover img{transform:none}}
+
+  /* ---------- GALLERY LIGHTBOX (photos only) ---------- */
+  body.lb-locked{overflow:hidden}
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(5,15,25,.97);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility 0s linear .22s}
+  .lightbox.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .22s ease}
+  .lb-stage{margin:0;max-width:100vw;max-height:100vh;max-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 72px 20px;width:100%;height:100%;box-sizing:border-box}
+  .lb-stage img{max-width:100%;max-height:calc(100vh - 128px);max-height:calc(100dvh - 128px);width:auto;height:auto;object-fit:contain;border-radius:6px;box-shadow:0 18px 60px rgba(0,0,0,.55);background:#0d2133}
+  .lb-meta{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:8px 18px;margin-top:14px;text-align:center;min-height:22px;padding:0 8px}
+  .lb-caption{color:#e6eef5;font-size:15.5px;font-weight:600;line-height:1.4}
+  .lb-caption:empty{display:none}
+  .lb-counter{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em;color:#8fc7f2;white-space:nowrap}
+  .lb-btn{position:absolute;border:1px solid rgba(255,255,255,.28);background:rgba(13,33,51,.82);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;-webkit-tap-highlight-color:transparent}
+  .lb-btn:hover,.lb-btn:focus-visible{background:var(--accent);border-color:var(--accent);outline:none}
+  .lb-close{top:calc(14px + env(safe-area-inset-top));right:16px;width:48px;height:48px;border-radius:50%;font-size:0}
+  .lb-prev,.lb-next{top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%}
+  .lb-prev{left:16px}
+  .lb-next{right:16px}
+  @media(max-width:640px){
+    .lb-stage{padding:64px 12px 16px}
+    .lb-stage img{max-height:calc(100vh - 124px);max-height:calc(100dvh - 124px)}
+    .lb-prev,.lb-next{width:44px;height:44px;top:auto;bottom:calc(14px + env(safe-area-inset-bottom));transform:none;background:rgba(13,33,51,.68)}
+    .lb-prev{left:14px}
+    .lb-next{right:14px}
+    .lb-meta{padding-bottom:52px}
+  }
+  @media (prefers-reduced-motion: reduce){.lightbox{transition:none}}
 
   /* ---------- FOOTER ---------- */
   footer{background:var(--navy);color:#dbe7f0;padding:84px 0 40px}
@@ -1147,6 +1183,17 @@
   </div>
 </footer>
 
+<!-- GALLERY LIGHTBOX — photos only, video cards are not included -->
+<div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery photo viewer" aria-hidden="true">
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close photo viewer"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 3.5L6 10l6.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo"><svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7.5 3.5L14 10l-6.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <figure class="lb-stage" id="lbStage">
+    <img id="lbImg" alt="" />
+    <figcaption class="lb-meta"><span class="lb-caption" id="lbCaption"></span><span class="lb-counter" id="lbCounter"></span></figcaption>
+  </figure>
+</div>
+
 <script>
   document.getElementById('serviceForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -1341,6 +1388,149 @@
       } catch (err) { /* opaque origin: routing already done above */ }
     });
     show();
+  })();
+
+  /* Gallery lightbox — PHOTOS only (the 33 images in #page-gallery .gallery).
+     Video cards (.vid-card / .vid-thumb) are deliberately not matched, so
+     they keep opening YouTube / playing inline exactly as before.
+     The trigger is ONE delegated document click handler — the same pattern
+     the page router above uses. The previous version attached a listener
+     to every photo at load and snapshotted the photo list up front; in
+     the sandboxed preview frame those per-element bindings never took
+     effect, so the zoom-in cursor showed but clicking a photo did
+     nothing. Delegation cannot miss, and the photo list is resolved
+     lazily from the live DOM at tap time — with a fallback that opens
+     the tapped photo on its own if the list query ever comes back
+     empty. */
+  (function () {
+    var box = document.getElementById('galleryLightbox');
+    if (!box) return;
+    var lbImg = document.getElementById('lbImg');
+    var lbCaption = document.getElementById('lbCaption');
+    var lbCounter = document.getElementById('lbCounter');
+    var closeBtn = document.getElementById('lbClose');
+    var items = [];
+
+    function collect() {
+      var figures = Array.prototype.slice.call(document.querySelectorAll('#page-gallery .gallery figure'));
+      return figures.map(function (fig) {
+        var img = fig.querySelector('img');
+        var cap = fig.querySelector('figcaption');
+        return {
+          fig: fig,
+          src: img ? (img.currentSrc || img.getAttribute('src') || '') : '',
+          alt: img ? (img.getAttribute('alt') || '') : '',
+          caption: cap ? cap.textContent.replace(/\s+/g, ' ').trim() : ''
+        };
+      }).filter(function (it) { return !!it.src; });
+    }
+    function openFigure(fig) {
+      items = collect();
+      var i = -1;
+      for (var k = 0; k < items.length; k++) { if (items[k].fig === fig) { i = k; break; } }
+      if (i === -1) {
+        var img = fig.querySelector('img');
+        if (!img) return;
+        var src = img.currentSrc || img.getAttribute('src') || '';
+        if (!src) return;
+        items = [{ fig: fig, src: src, alt: img.getAttribute('alt') || '', caption: '' }];
+        i = 0;
+      }
+      openAt(i, fig);
+    }
+    var index = 0;
+    var isOpen = false;
+    var lastFocus = null;
+
+    function render() {
+      var it = items[index];
+      lbImg.setAttribute('src', it.src);
+      lbImg.setAttribute('alt', it.alt);
+      /* Only a caption that already exists on the page is shown. The grid
+         photos carry none, so nothing is invented for them. */
+      lbCaption.textContent = it.caption || '';
+      lbCounter.textContent = (index + 1) + ' / ' + items.length;
+      box.setAttribute('aria-label', 'Gallery photo ' + (index + 1) + ' of ' + items.length);
+      /* Warm the neighbours so stepping feels instant. */
+      [index - 1, index + 1].forEach(function (n) {
+        var w = items[(n + items.length) % items.length];
+        if (w) { var pre = new Image(); pre.src = w.src; }
+      });
+    }
+    function openAt(i, trigger) {
+      index = ((i % items.length) + items.length) % items.length;
+      lastFocus = trigger || document.activeElement;
+      render();
+      isOpen = true;
+      box.classList.add('open');
+      box.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lb-locked');
+      if (closeBtn) closeBtn.focus({ preventScroll: true });
+    }
+    function closeBox() {
+      if (!isOpen) return;
+      isOpen = false;
+      box.classList.remove('open');
+      box.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lb-locked');
+      /* No scrolling is touched here: the Gallery stays exactly where it was. */
+      if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) { lastFocus.focus(); } }
+    }
+    function step(d) { index = ((index + d) % items.length + items.length) % items.length; render(); }
+
+    /* Make the photos keyboard-focusable. Progressive enhancement only —
+       the delegated handlers below work whether or not this runs. */
+    try {
+      var labelled = collect();
+      labelled.forEach(function (it, i) {
+        it.fig.setAttribute('tabindex', '0');
+        it.fig.setAttribute('role', 'button');
+        it.fig.setAttribute('aria-label', 'View photo ' + (i + 1) + ' of ' + labelled.length + ' full screen');
+      });
+    } catch (e) { /* delegation below does not depend on this */ }
+
+    /* Delegated clicks: gallery photos open the viewer; while it is open,
+       its own controls step/close and a tap on the backdrop (anything that
+       is not the photo itself) closes. */
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      if (isOpen) {
+        if (t.closest('#lbClose')) { closeBox(); return; }
+        if (t.closest('#lbPrev')) { step(-1); return; }
+        if (t.closest('#lbNext')) { step(1); return; }
+        if (box.contains(t) && t !== lbImg) { closeBox(); return; }
+      }
+      var fig = t.closest('#page-gallery .gallery figure');
+      if (fig) openFigure(fig);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (isOpen) {
+        if (e.key === 'Escape') closeBox();
+        else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+        return;
+      }
+      if (e.key === 'Enter' || e.key === ' ') {
+        var t = e.target;
+        if (t && t.matches && t.matches('#page-gallery .gallery figure')) { e.preventDefault(); openFigure(t); }
+      }
+    });
+    /* Touch swipe on phones: horizontal swipe steps, kept clear of taps. */
+    var tx = 0, ty = 0, tracking = false;
+    document.addEventListener('touchstart', function (e) {
+      if (!isOpen || !e.changedTouches.length) return;
+      tx = e.changedTouches[0].clientX; ty = e.changedTouches[0].clientY; tracking = true;
+    }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+      if (!tracking || !e.changedTouches.length) return;
+      tracking = false;
+      var dx = e.changedTouches[0].clientX - tx;
+      var dy = e.changedTouches[0].clientY - ty;
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.4) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+    /* Exposed for verification / debugging only. */
+    window.__galleryLightbox = { openAt: function (i) { if (!items.length) items = collect(); openAt(i, null); }, openFigure: openFigure, close: closeBox, step: step, count: function () { return collect().length; }, isOpen: function () { return isOpen; }, index: function () { return index; } };
   })();
 </script>
 </body>
