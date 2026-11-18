@@ -336,23 +336,28 @@
   @media (prefers-reduced-motion: reduce){.lightbox{transition:none}}
 
   /* ---------- FOOTER ---------- */
-  footer{background:var(--navy);color:#dbe7f0;padding:84px 0 40px}
-  footer .kicker{color:#8fc7f2}
-  footer h2{color:#fff;font-size:clamp(38px,6.4vw,64px)}
-  .foot-grid{display:grid;gap:36px;margin-top:36px}
-  @media(min-width:900px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
-  .foot-phone{font-family:"Archivo",sans-serif;font-weight:900;font-size:clamp(34px,5.6vw,52px);color:#fff;text-decoration:none;line-height:1.05;display:inline-block}
+  footer{background:var(--navy);color:#dbe7f0;padding:20px 0 12px}
+  footer .kicker{color:#8fc7f2;margin-bottom:7px;line-height:1.3}
+  footer h2{color:#fff;font-size:clamp(24px,3.75vw,54px)}
+  .foot-sub{color:#b9cddd;font-size:16.5px;margin:5px 0 0;line-height:1.4}
+  .foot-grid{display:grid;gap:26px 36px;margin-top:13px;align-items:start}
+  @media(min-width:1024px){.foot-grid{grid-template-columns:1.25fr .5fr 1fr 1.1fr}}
+  @media(min-width:700px) and (max-width:1023px){.foot-grid{grid-template-columns:1fr 1fr}}
+  .foot-phone{font-family:"Archivo",sans-serif;font-weight:900;font-size:34px;color:#fff;text-decoration:none;line-height:1.05;display:inline-block}
   .foot-phone:hover{color:#8fc7f2}
-  .foot-mail{display:inline-block;color:#8fc7f2;font-size:20px;font-weight:600;text-decoration:none;margin-top:12px}
+  .foot-mail{display:inline-block;color:#8fc7f2;font-size:17px;font-weight:600;text-decoration:none;margin-top:6px}
   .foot-mail:hover{text-decoration:underline}
-  .foot-block h4{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8fc7f2;margin:0 0 12px;font-weight:600}
-  .foot-block p{margin:0;color:#b9cddd;font-size:16.5px}
+  .foot-block h4{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8fc7f2;margin:0 0 7px;font-weight:600;line-height:1.3}
+  .foot-block p{margin:0;color:#b9cddd;font-size:14.5px;line-height:1.34}
   .foot-block p b{color:#fff}
   .foot-block a{color:#fff;font-weight:600;text-decoration:none}
   .foot-block a:hover{text-decoration:underline}
-  .foot-logo{width:120px;border-radius:10px;margin-top:6px}
-  .foot-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-  .foot-bottom{margin-top:52px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;color:#7e97ab;font-size:13.5px}
+  .foot-logo{width:84px;border-radius:10px;margin-top:6px}
+  .foot-logozone .foot-logo{width:auto;height:116px;margin-top:2px;border-radius:0}
+  .foot-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .foot-ctas .btn{min-height:48px;padding:11px 18px;font-size:15.5px}
+  .foot-bottom{margin-top:11px;padding-top:10px;border-top:1px solid rgba(255,255,255,.16);color:#7e97ab;font-size:13.5px;line-height:1.4}
+  .contact-copy{background:var(--navy);color:#7e97ab;font-size:13.5px;text-align:center;padding:18px 20px}
   /* ---------- GLASS DROP MOBILE MENU (≤860px) ---------- */
   .burger{display:none;background:none;border:0;padding:0;cursor:pointer;width:44px;height:44px;flex:none;align-items:center;justify-content:center;border-radius:8px}
   .burger span{display:block;width:26px;height:3px;background:var(--ink);border-radius:2px;position:relative}
@@ -436,15 +441,7 @@
   .cred-row i{width:1px;height:18px;background:var(--line);margin:0 22px;flex:none}
   @media(max-width:640px){.cred-row span{font-size:11px;letter-spacing:.1em}.cred-row i{margin:0 11px;height:15px}}
 
-  /* ---------- CLOSING CTA BAND ---------- */
-  .cta-band{position:relative;min-height:350px;padding:0;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--navy)}
-  .cta-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
-  .cta-band::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,33,51,.7),rgba(13,33,51,.84))}
-  .cta-band-inner{position:relative;z-index:1;padding:54px 20px;max-width:780px}
-  .cta-band h2{color:#fff;font-size:clamp(32px,5.4vw,52px)}
-  .cta-band p{color:#c7d6e2;font-size:18.5px;margin:14px 0 0}
-  .cta-band .btn{margin-top:26px}
-  @media(min-width:980px){.cta-band{min-height:380px}}
+
 </style>
 </head>
 <body>
@@ -461,7 +458,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#/home">
-      <img src="assets/a001.png" alt="Texas TAG logo — Titanium Auto Gyro, Texas division" />
+      <img src="assets/site/tag-texas-logo.png" alt="Texas TAG logo — Titanium Auto Gyro, Texas division" />
       <span class="brand-name">E7 <span>AVIATION</span><small>Texas TAG · Covington, TX</small></span>
     </a>
     <nav class="navlinks" aria-label="Main">
@@ -550,8 +547,8 @@
       </div>
     </div>
     <div class="hero-photo">
-      <video autoplay muted loop playsinline poster="assets/a002.webp" aria-label="Video from the E7 Aviation homepage — yellow Titanium Explorer gyroplane on the ramp, rotor turning">
-        <source src="assets/a003.mp4" type="video/mp4" />
+      <video autoplay muted loop playsinline poster="assets/site/explorer-137.webp" aria-label="Video from the E7 Aviation homepage — yellow Titanium Explorer gyroplane on the ramp, rotor turning">
+        <source src="assets/site/home-video.mp4" type="video/mp4" />
       </video>
       <div class="hero-chips">
         <span class="chip">ROTAX IRMP <span>Cert. Technician 6824</span></span>
@@ -593,7 +590,7 @@
         <p style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-accent" href="#/about">Meet E7 &amp; Tim Weiland →</a><a class="btn btn-outline" href="#/contact">Contact E7</a></p>
       </div>
       <figure class="about-photo" style="margin:0">
-        <img src="assets/a004.webp" alt="The E7 Aviation workshop in Covington, Texas — yellow Titanium Explorer under service" style="aspect-ratio:4/3" />
+        <img src="assets/site/workshop.webp" alt="The E7 Aviation workshop in Covington, Texas — yellow Titanium Explorer under service" style="aspect-ratio:4/3" />
         <figcaption>THE E7 WORKSHOP — COVINGTON, TX</figcaption>
       </figure>
     </div>
@@ -630,15 +627,15 @@
     <p class="section-lede"><strong style="color:var(--ink)">Texas TAG is a division of Titanium Auto Gyro North America distributorship.</strong> Three Explorer power options, one airframe — tap a model for its full factory spec table.</p>
     <div class="cards">
       <article class="teaser-card">
-        <div class="card-img"><img src="assets/a005.webp" alt="Titanium Explorer 100HP — yellow gyroplane, front view" /></div>
+        <div class="card-img"><img src="assets/site/explorer-100.webp" alt="Titanium Explorer 100HP — yellow gyroplane, front view" /></div>
         <div class="card-body"><span class="card-num">EXPLORER — 100HP</span><h3>Titanium Explorer 100HP</h3><p>Rotax 912 ULS · Cruise 60–85 knots · Takeoff 100 m · Climb 650 ft/min</p><div class="card-foot"><a class="teaser-link" href="#/aircraft/model-100">Full specs →</a></div></div>
       </article>
       <article class="teaser-card">
-        <div class="card-img"><img src="assets/a006.webp" alt="Titanium Explorer 115HP — blue gyroplane at sunset on a Texas field" /></div>
+        <div class="card-img"><img src="assets/site/explorer-115.webp" alt="Titanium Explorer 115HP — blue gyroplane at sunset on a Texas field" /></div>
         <div class="card-body"><span class="card-num">EXPLORER — 115HP</span><h3>Titanium Explorer 115HP</h3><p>Rotax 914 UL · Cruise 60–90 knots · Takeoff 70 m · Climb 1,000 ft/min</p><div class="card-foot"><a class="teaser-link" href="#/aircraft/model-115">Full specs →</a></div></div>
       </article>
       <article class="teaser-card">
-        <div class="card-img"><img src="assets/a002.webp" alt="Titanium Explorer 137HP to 148HP — blue gyroplane with pilot at an airfield" /></div>
+        <div class="card-img"><img src="assets/site/explorer-137.webp" alt="Titanium Explorer 137HP to 148HP — blue gyroplane with pilot at an airfield" /></div>
         <div class="card-body"><span class="card-num">EXPLORER — 137HP TO 148HP</span><h3>Titanium Explorer Turbo</h3><p>Rotax 912 ULS Special Turbo · Cruise 60–95 knots · Takeoff 60 m · Climb 1,450 ft/min</p><div class="card-foot"><a class="teaser-link" href="#/aircraft/model-137">Full specs →</a></div></div>
       </article>
     </div>
@@ -665,7 +662,7 @@
 
     <div class="cards">
       <article class="card" id="svc-maintenance">
-        <div class="card-img"><img src="assets/a004.webp" alt="Inside the E7 Aviation workshop — a yellow Titanium Explorer gyroplane under service" /></div>
+        <div class="card-img"><img src="assets/site/workshop.webp" alt="Inside the E7 Aviation workshop — a yellow Titanium Explorer gyroplane under service" /></div>
         <div class="card-body">
           <span class="card-num">SVC — 01</span>
           <h3>Maintenance &amp; Repair</h3>
@@ -680,7 +677,7 @@
       </article>
 
       <article class="card" id="svc-inspections">
-        <div class="card-img"><img src="assets/a007.webp" alt="Red Titanium Explorer gyroplane on the ramp with a fighter jet behind it at an airshow" /></div>
+        <div class="card-img"><img src="assets/site/hero-tarmac.webp" alt="Red Titanium Explorer gyroplane on the ramp with a fighter jet behind it at an airshow" /></div>
         <div class="card-body">
           <span class="card-num">SVC — 02</span>
           <h3>Conditionals / Annual Inspections</h3>
@@ -695,7 +692,7 @@
       </article>
 
       <article class="card" id="svc-rotax">
-        <div class="card-img"><img src="assets/a008.webp" alt="Front view of a yellow Titanium Explorer gyroplane showing the Rotax engine installation" /></div>
+        <div class="card-img"><img src="assets/site/svc-rotax.webp" alt="Front view of a yellow Titanium Explorer gyroplane showing the Rotax engine installation" /></div>
         <div class="card-body">
           <span class="card-num">SVC — 03</span>
           <h3>Rotax Engine Upgrades</h3>
@@ -710,7 +707,7 @@
       </article>
 
       <article class="card" id="svc-fabrication">
-        <div class="card-img"><img src="assets/a009.webp" alt="Titanium Explorer gyroplanes lined up on the field at E7 Aviation" /></div>
+        <div class="card-img"><img src="assets/site/svc-fleet.webp" alt="Titanium Explorer gyroplanes lined up on the field at E7 Aviation" /></div>
         <div class="card-body">
           <span class="card-num">SVC — 04</span>
           <h3>Custom Part Fabrication</h3>
@@ -725,7 +722,7 @@
       </article>
 
       <article class="card" id="svc-builder">
-        <div class="card-img"><img src="assets/a010.webp" alt="A row of Titanium Explorer gyroplanes ready for builder assist and delivery" /></div>
+        <div class="card-img"><img src="assets/site/gallery-row.webp" alt="A row of Titanium Explorer gyroplanes ready for builder assist and delivery" /></div>
         <div class="card-body">
           <span class="card-num">SVC — 05</span>
           <h3>Builder Assist</h3>
@@ -740,7 +737,7 @@
       </article>
 
       <article class="card">
-        <div class="card-img"><img src="assets/a011.webp" alt="Titanium Explorer gyroplane on floats flying with two pilots waving" /></div>
+        <div class="card-img"><img src="assets/site/svc-flight.webp" alt="Titanium Explorer gyroplane on floats flying with two pilots waving" /></div>
         <div class="card-body">
           <span class="card-num">SVC — 06</span>
           <h3>Bolly Props &amp; CFI Training</h3>
@@ -779,7 +776,7 @@
         </ul>
       </div>
       <figure style="margin:0">
-        <div class="rotax-photo"><img src="assets/a012.webp" alt="Pilot in the cockpit of a Titanium Explorer during flight" /></div>
+        <div class="rotax-photo"><img src="assets/site/gallery-cockpit.webp" alt="Pilot in the cockpit of a Titanium Explorer during flight" /></div>
         <figcaption>IN FLIGHT — TITANIUM EXPLORER, FROM THE E7 GALLERY</figcaption>
       </figure>
     </div>
@@ -859,7 +856,7 @@
 
     <div class="cards">
       <article class="model" id="model-100">
-        <div class="model-img portrait"><img src="assets/a005.webp" alt="Titanium Explorer 100HP — yellow gyroplane, front view" /></div>
+        <div class="model-img portrait"><img src="assets/site/explorer-100.webp" alt="Titanium Explorer 100HP — yellow gyroplane, front view" /></div>
         <div class="model-body">
           <h3><span>Explorer — 100HP</span>Titanium Explorer 100HP</h3>
           <div class="spec-list">
@@ -879,7 +876,7 @@
       </article>
 
       <article class="model" id="model-115">
-        <div class="model-img portrait"><img src="assets/a006.webp" alt="Titanium Explorer 115HP — blue gyroplane at sunset on a Texas field" /></div>
+        <div class="model-img portrait"><img src="assets/site/explorer-115.webp" alt="Titanium Explorer 115HP — blue gyroplane at sunset on a Texas field" /></div>
         <div class="model-body">
           <h3><span>Explorer — 115HP</span>Titanium Explorer 115HP</h3>
           <div class="spec-list">
@@ -899,7 +896,7 @@
       </article>
 
       <article class="model" id="model-137">
-        <div class="model-img"><img src="assets/a002.webp" alt="Titanium Explorer 137HP to 148HP — blue gyroplane with pilot at an airfield" /></div>
+        <div class="model-img"><img src="assets/site/explorer-137.webp" alt="Titanium Explorer 137HP to 148HP — blue gyroplane with pilot at an airfield" /></div>
         <div class="model-body">
           <h3><span>Explorer — 137HP to 148HP</span>Titanium Explorer Turbo</h3>
           <div class="spec-list">
@@ -943,8 +940,8 @@
         <div class="po-head"><span class="po-name">Titanium Explorer · Gyroplane</span><span class="po-badge">FOR SALE</span></div>
         <div class="po-tail">N377TE</div>
         <div class="po-video" style="aspect-ratio:4/3">
-          <video autoplay muted loop playsinline controls preload="metadata" poster="assets/a013.webp" aria-label="Video of Titanium Explorer N377TE on the ramp — from the E7 Aviation Pre-Owned page">
-            <source src="assets/a014.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline controls preload="metadata" poster="assets/site/preowned-n377te-poster.webp" aria-label="Video of Titanium Explorer N377TE on the ramp — from the E7 Aviation Pre-Owned page">
+            <source src="assets/site/preowned-n377te.mp4" type="video/mp4" />
           </video>
         </div>
         <p class="po-cap">N377TE — VIDEO FROM THE PRE-OWNED PAGE ON E7AVIATION.COM · 0:28 · SOUND ON VIA PLAYER CONTROLS</p>
@@ -954,8 +951,8 @@
         <div class="po-head"><span class="po-name">Titanium Explorer · Gyroplane</span><span class="po-badge">FOR SALE</span></div>
         <div class="po-tail">N488TE</div>
         <div class="po-video" style="aspect-ratio:16/9">
-          <video autoplay muted loop playsinline controls preload="metadata" poster="assets/a015.webp" aria-label="Video of Titanium Explorer N488TE — from the E7 Aviation Pre-Owned page">
-            <source src="assets/a016.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline controls preload="metadata" poster="assets/site/preowned-n488te-poster.webp" aria-label="Video of Titanium Explorer N488TE — from the E7 Aviation Pre-Owned page">
+            <source src="assets/site/preowned-n488te.mp4" type="video/mp4" />
           </video>
         </div>
         <p class="po-cap">N488TE — VIDEO FROM THE PRE-OWNED PAGE ON E7AVIATION.COM · 0:28 · SOUND ON VIA PLAYER CONTROLS</p>
@@ -1006,74 +1003,74 @@
     <h3 class="gal-sub">Videos <span>7 films — 5 from e7aviation.com · 2 from the Gyro Guy channel</span></h3>
     <div class="vid-grid">
       <figure class="vid-card">
-        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=29RRss4qFeI" target="_blank" rel="noopener" aria-label="Watch GYRO gang takes over hillsboro on YouTube"><img src="assets/a017.jpg" alt="GYRO gang takes over hillsboro — a gyroplane lifting off the runway at Hillsboro Municipal Airport during the fly-in" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
+        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=29RRss4qFeI" target="_blank" rel="noopener" aria-label="Watch GYRO gang takes over hillsboro on YouTube"><img src="assets/site/gallery-hillsboro.jpg" alt="GYRO gang takes over hillsboro — a gyroplane lifting off the runway at Hillsboro Municipal Airport during the fly-in" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
         <figcaption class="vid-cap"><b>GYRO gang takes over hillsboro</b><span>Gyro Guy · YouTube · Nov 11, 2026</span>
           <p class="vid-desc">Formation flying with the Gyro Gang at the Hillsboro Municipal Airport fly-in (KINJ), Hillsboro, Texas — a 7-mile formation lap, low approaches and staggered landings.</p>
           <p class="vid-desc">Stacy leading in the air, Tim leading on the ground and on the radio.</p>
         </figcaption>
       </figure>
       <figure class="vid-card">
-        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=olzXsjSL4aE" target="_blank" rel="noopener" aria-label="Watch August 16, 2024 on YouTube"><img src="assets/a018.jpg" alt="August 16, 2024 — yellow Titanium Explorer gyroplane with two helmeted pilots and a child in the cockpit, waving" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
+        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=olzXsjSL4aE" target="_blank" rel="noopener" aria-label="Watch August 16, 2024 on YouTube"><img src="assets/site/gallery-yt-aug16.jpg" alt="August 16, 2024 — yellow Titanium Explorer gyroplane with two helmeted pilots and a child in the cockpit, waving" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
         <figcaption class="vid-cap"><b>August 16, 2024</b><span>Texas TAG Gyro · YouTube</span></figcaption>
       </figure>
       <figure class="vid-card">
-        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=XYzv5Juhe14" target="_blank" rel="noopener" aria-label="Watch A short jaunt around Lake Whitney! on YouTube"><img src="assets/a019.jpg" alt="A short jaunt around Lake Whitney! — aerial view over green Texas fields and a country road toward Lake Whitney" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
+        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=XYzv5Juhe14" target="_blank" rel="noopener" aria-label="Watch A short jaunt around Lake Whitney! on YouTube"><img src="assets/site/gallery-yt-whitney.jpg" alt="A short jaunt around Lake Whitney! — aerial view over green Texas fields and a country road toward Lake Whitney" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
         <figcaption class="vid-cap"><b>A short jaunt around Lake Whitney!</b><span>Texas TAG Gyro · YouTube</span></figcaption>
       </figure>
       <figure class="vid-card">
-        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=y-IpBa74NkM" target="_blank" rel="noopener" aria-label="Watch From Amarillo to Australia- a few pics on YouTube"><img src="assets/a020.jpg" alt="From Amarillo to Australia- a few pics — yellow Titanium Explorer gyroplane, tail N957TW, with two helmeted pilots and a child waving" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
+        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=y-IpBa74NkM" target="_blank" rel="noopener" aria-label="Watch From Amarillo to Australia- a few pics on YouTube"><img src="assets/site/gallery-yt-amarillo.jpg" alt="From Amarillo to Australia- a few pics — yellow Titanium Explorer gyroplane, tail N957TW, with two helmeted pilots and a child waving" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
         <figcaption class="vid-cap"><b>From Amarillo to Australia- a few pics</b><span>Texas TAG Gyro · YouTube</span></figcaption>
       </figure>
       <figure class="vid-card">
-        <div class="vid-media"><video autoplay muted loop playsinline controls preload="metadata" poster="assets/a021.webp" aria-label="Amphibious TAG — Titanium Explorer on floats, from the E7 Aviation gallery"><source src="assets/a022.mp4" type="video/mp4" /><source src="assets/a023.webm" type="video/webm" /></video></div>
+        <div class="vid-media"><video autoplay muted loop playsinline controls preload="metadata" poster="assets/site/gallery-video-poster.webp" aria-label="Amphibious TAG — Titanium Explorer on floats, from the E7 Aviation gallery"><source src="assets/site/gallery-video.mp4" type="video/mp4" /><source src="assets/site/gallery-video.webm" type="video/webm" /></video></div>
         <figcaption class="vid-cap"><b>Amphibious TAG</b><span>E7 Aviation gallery video</span></figcaption>
       </figure>
       <figure class="vid-card">
-        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=4w8l6yDPVk4" target="_blank" rel="noopener" aria-label="Watch Chasing Tim in Auto Gyro MTO Sport Gyroplane, in Blum Texas on YouTube"><img src="assets/a024.jpg" alt="Chasing Tim — in-flight view of Tim Weiland's red and white AutoGyro MTO Sport over green Texas fields, filmed from the chasing gyroplane" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
+        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=4w8l6yDPVk4" target="_blank" rel="noopener" aria-label="Watch Chasing Tim in Auto Gyro MTO Sport Gyroplane, in Blum Texas on YouTube"><img src="assets/site/gallery-chasing-tim.jpg" alt="Chasing Tim — in-flight view of Tim Weiland's red and white AutoGyro MTO Sport over green Texas fields, filmed from the chasing gyroplane" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
         <figcaption class="vid-cap"><b>Chasing Tim in Auto Gyro MTO Sport Gyroplane, in Blum Texas</b><span>Gyro Guy · YouTube · Jun 16, 2022</span>
           <p class="vid-desc">The idea was to chase him by mirroring his moves. Not an easy task, as he has years of flying experience under his belt. However, it was an honor. I look forward to FLYING with him again in the future, alongside our other pilot friends. FLY SAFE!</p>
         </figcaption>
       </figure>
       <figure class="vid-card">
-        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=qPUvJfyw7f8" target="_blank" rel="noopener" aria-label="Watch Take off from Fainting Goat 87TX in our reliable Titanium Autogyro! on YouTube"><img src="assets/a025.jpg" alt="Take off from Fainting Goat 87TX — aerial view over the Fainting Goat field and its open shelter" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
+        <div class="vid-media"><a class="vid-thumb" href="https://www.youtube.com/watch?v=qPUvJfyw7f8" target="_blank" rel="noopener" aria-label="Watch Take off from Fainting Goat 87TX in our reliable Titanium Autogyro! on YouTube"><img src="assets/site/gallery-yt-faintinggoat.jpg" alt="Take off from Fainting Goat 87TX — aerial view over the Fainting Goat field and its open shelter" loading="eager" decoding="async" /><span class="vid-play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" fill="#fff"/></svg></span><span class="vid-watch" aria-hidden="true"><svg width="34" height="24" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="4.5" fill="#FF0000"/><path d="M11.2 5.6v8.8L19 10z" fill="#fff"/></svg></span></a></div>
         <figcaption class="vid-cap"><b>Take off from Fainting Goat 87TX in our reliable Titanium Autogyro!</b><span>Texas TAG Gyro · YouTube</span></figcaption>
       </figure>
     </div>
     <h3 class="gal-sub">Photos <span>All 33 — the complete gallery</span></h3>
     <div class="gallery">
-      <figure><img src="assets/a026.webp" alt="Titanium Auto Gyro gyroplane — photo 1 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a027.webp" alt="Titanium Auto Gyro gyroplane — photo 2 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="data:image/webp;base64,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" alt="Titanium Auto Gyro gyroplane — photo 3 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a028.webp" alt="Titanium Auto Gyro gyroplane — photo 4 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a029.webp" alt="Titanium Auto Gyro gyroplane — photo 5 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a030.webp" alt="Titanium Auto Gyro gyroplane — photo 6 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a031.webp" alt="Titanium Auto Gyro gyroplane — photo 7 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a032.webp" alt="Titanium Auto Gyro gyroplane — photo 8 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a033.webp" alt="Titanium Auto Gyro gyroplane — photo 9 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a034.webp" alt="Titanium Auto Gyro gyroplane — photo 10 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a035.webp" alt="Titanium Auto Gyro gyroplane — photo 11 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a036.webp" alt="Titanium Auto Gyro gyroplane — photo 12 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a037.webp" alt="Titanium Auto Gyro gyroplane — photo 13 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a038.webp" alt="Titanium Auto Gyro gyroplane — photo 14 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a039.webp" alt="Titanium Auto Gyro gyroplane — photo 15 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a040.webp" alt="Titanium Auto Gyro gyroplane — photo 16 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a041.webp" alt="Titanium Auto Gyro gyroplane — photo 17 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a042.webp" alt="Titanium Auto Gyro gyroplane — photo 18 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a043.webp" alt="Titanium Auto Gyro gyroplane — photo 19 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a044.webp" alt="Titanium Auto Gyro gyroplane — photo 20 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a045.webp" alt="Titanium Auto Gyro gyroplane — photo 21 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a046.webp" alt="Titanium Auto Gyro gyroplane — photo 22 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a047.webp" alt="Titanium Auto Gyro gyroplane — photo 23 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a048.webp" alt="Titanium Auto Gyro gyroplane — photo 24 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a049.webp" alt="Titanium Auto Gyro gyroplane — photo 25 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a050.webp" alt="Titanium Auto Gyro gyroplane — photo 26 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a051.webp" alt="Titanium Auto Gyro gyroplane — photo 27 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a052.webp" alt="Titanium Auto Gyro gyroplane — photo 28 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a053.webp" alt="Titanium Auto Gyro gyroplane — photo 29 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a054.webp" alt="Titanium Auto Gyro gyroplane — photo 30 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a055.webp" alt="Titanium Auto Gyro gyroplane — photo 31 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a056.webp" alt="Titanium Auto Gyro gyroplane — photo 32 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
-      <figure><img src="assets/a057.webp" alt="Titanium Auto Gyro gyroplane — photo 33 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-01.webp" alt="Titanium Auto Gyro gyroplane — photo 1 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-02.webp" alt="Titanium Auto Gyro gyroplane — photo 2 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-03.webp" alt="Titanium Auto Gyro gyroplane — photo 3 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-04.webp" alt="Titanium Auto Gyro gyroplane — photo 4 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-05.webp" alt="Titanium Auto Gyro gyroplane — photo 5 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-06.webp" alt="Titanium Auto Gyro gyroplane — photo 6 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-07.webp" alt="Titanium Auto Gyro gyroplane — photo 7 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-08.webp" alt="Titanium Auto Gyro gyroplane — photo 8 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-09.webp" alt="Titanium Auto Gyro gyroplane — photo 9 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-10.webp" alt="Titanium Auto Gyro gyroplane — photo 10 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-11.webp" alt="Titanium Auto Gyro gyroplane — photo 11 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-12.webp" alt="Titanium Auto Gyro gyroplane — photo 12 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-13.webp" alt="Titanium Auto Gyro gyroplane — photo 13 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-14.webp" alt="Titanium Auto Gyro gyroplane — photo 14 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-15.webp" alt="Titanium Auto Gyro gyroplane — photo 15 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-16.webp" alt="Titanium Auto Gyro gyroplane — photo 16 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-17.webp" alt="Titanium Auto Gyro gyroplane — photo 17 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-18.webp" alt="Titanium Auto Gyro gyroplane — photo 18 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-19.webp" alt="Titanium Auto Gyro gyroplane — photo 19 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-20.webp" alt="Titanium Auto Gyro gyroplane — photo 20 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-21.webp" alt="Titanium Auto Gyro gyroplane — photo 21 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-22.webp" alt="Titanium Auto Gyro gyroplane — photo 22 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-23.webp" alt="Titanium Auto Gyro gyroplane — photo 23 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-24.webp" alt="Titanium Auto Gyro gyroplane — photo 24 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-25.webp" alt="Titanium Auto Gyro gyroplane — photo 25 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-26.webp" alt="Titanium Auto Gyro gyroplane — photo 26 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-27.webp" alt="Titanium Auto Gyro gyroplane — photo 27 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-28.webp" alt="Titanium Auto Gyro gyroplane — photo 28 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-29.webp" alt="Titanium Auto Gyro gyroplane — photo 29 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-30.webp" alt="Titanium Auto Gyro gyroplane — photo 30 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-31.webp" alt="Titanium Auto Gyro gyroplane — photo 31 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-32.webp" alt="Titanium Auto Gyro gyroplane — photo 32 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
+      <figure><img src="assets/site/gallery-33.webp" alt="Titanium Auto Gyro gyroplane — photo 33 of 33 from the E7 Aviation gallery on e7aviation.com" loading="lazy" decoding="async" /></figure>
     </div>
   </div>
 </section>
@@ -1093,7 +1090,7 @@
     <div class="contact-grid">
       <div class="contact-card"><h3>Visit</h3><p><b>E7 Aviation, LLC.</b><br>701 HCR 1430<br>Covington, Texas 76636<br>United States</p><p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=701+HCR+1430+Covington+TX+76636" target="_blank" rel="noopener">Get directions →</a></p></div>
       <div class="contact-card"><h3>Hours</h3><p><b>Monday – Saturday</b><br>9:00am – 5:00pm</p><p style="margin-top:12px"><b>Sunday</b><br>12:00pm – 5:00pm</p></div>
-      <div class="contact-card"><h3>Dealer</h3><p>Texas TAG — a division of the <b>Titanium Auto Gyro North America</b> distributorship.</p><p style="margin-top:12px"><a href="#/services/book">Book service →</a></p><img class="foot-logo" src="assets/a001.png" alt="Texas TAG logo" style="filter:none;margin-top:16px" /></div>
+      <div class="contact-card"><h3>Dealer</h3><p>Texas TAG — a division of the <b>Titanium Auto Gyro North America</b> distributorship.</p><p style="margin-top:12px"><a href="#/services/book">Book service →</a></p><img class="foot-logo" src="assets/site/tag-texas-logo.png" alt="Texas TAG logo" style="filter:none;margin-top:16px" /></div>
     </div>
     <p style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-accent" href="tel:+18179396002">☎ Call E7 Aviation</a><a class="btn btn-outline" href="#/services/book">Book Service →</a></p>
   </div>
@@ -1113,7 +1110,7 @@
     </div>
     <div class="about-grid" style="margin-top:40px">
       <figure class="about-photo">
-        <img src="assets/a004.webp" alt="The E7 Aviation workshop in Covington, Texas — yellow Titanium Explorer under service" />
+        <img src="assets/site/workshop.webp" alt="The E7 Aviation workshop in Covington, Texas — yellow Titanium Explorer under service" />
         <figcaption>THE E7 WORKSHOP — COVINGTON, TX</figcaption>
       </figure>
       <div>
@@ -1139,23 +1136,13 @@
 </div>
 </main>
 
-<!-- CLOSING CTA BAND — bottom of every view, above the footer -->
-<section class="cta-band" aria-label="Need an annual or service?">
-  <img src="data:image/webp;base64,UklGRnwLAABXRUJQVlA4IHALAABQZwCdASqAAuABPnk8nUsko6MhoJNoEJAPCWlu4TwOnBx6xmT+8zf+VToPNat3d0PPO8Os3zpZI/Gy3GNIF32nyeA69j8wk5V5ikydg7CnxtQ5xeIv/lpCJvo2oc4vEX/yysgDOLxF/+FKaHkkddTgGSgy8WMUunBHONbsTmOGAOOrW6nRF7dX+yfwvLLlG1I4yJ/hfBUD8SfLr6+o5N9dneIoJd2PJqyOXpgYl0MR0gahznpCfLBj8ss0QLfFhadBGXfxi1XzfnQbFG1DorR0DRtJ/xHF//9l8fBog0uF8F/YB+GhFD8bvF90qUO/zyd8CAZm+mH40RbOw21i5oAxoMBhLSZojxzdAZsAQ5bRqr/+L0P//yh7A//LlHHl74zw4fnZM36iMk/qM/5+0Fq4ZfdRw6vMI8S+sCyQzy/u4eMCV6fVwE8xJvTQ/+PJCeVx75MdUTMrBxzZPIiwWtA0aVrWM1OplIVANek185G1DtQuT+675Md6XOnrdJNneYUS7W73z/HO4widC6cihP9jCTeOMv8VnpgKTus7qDjCnN/6O4axdQ7PzEdVF0fr2+pCgSVHrew1nLN/Xh+im4xSe++26huJZEGuPVL30Cn/UE4TX+yqoq8Xl4rt9hOqMBGYB1WeYD6rF0bUOcdLn9RCZpnx51h9ypp4wTfIxse46j5poViT+fssOI7Buh7NzvN1f7J/pZ7Hr/LG1Fk5iLcSDvWk1w2znIv/lyiKMrswbVpVqNxMlvC8sBNt8rs6Wxzvs84QgFek23YXsweQqRf/LJmyUWOMnhq7LKgGurKjfGuYenN9OCOmpuPKL/wUuk90XMA11bNhX88WIDPwnaRcquRzcftoPT9I0vRc29RGjuc0gNqLtAdIjsg2D0TWjFl9S6You8D0Ho2p4VgGupvo4o8KwDmcdFFasQS/6cYpqf9CKgKBvgeRr52cVBTPKY47C9tQ6N+0XJ7DwiUE/+L5pv1jRotkyQGtVKvnI2p8oUFkrn2gcoz11ZUmrp7GUhIb4Xlj04NjOO3RJxaYZ85qG+/U8UxVJGKRCy65wKQbOxGNbVMeCc7+FoLrb3gIeUFwIVUsmulPb3hvhnmOmY4U8kwAAP7WkP/0S/ot/b9Of/9HP3g/tJcU7dEJ71Gm1C70dibEpQP1ny+XUfk+/hKCaOU1KEaZ/K7Z80b9DCq/fuRwsanwpb8WTldpJsLxALOEXfiNcI7+v5/Nofaem8xQ3qV5YvfcojDBbCZC2iwfEEfGbGWicMo1obsqwWLkWSaPU6xrUSKDkcoZjxY6L/1MDRgoXMmAvumobwAvWkOssHgA0JiT+yUL0wAx1lPHHIBQWL0ormHsWyBL0llvcgIQudO/+fsoFNHVT016HfGBnOj3OdwY8gQLnhLdH3ZDUEEUjexsRPwR/5GX+AQXefb6Wilw2ogyuD7gYDEvWHEsNc8RwzOMcrEPzoOmuoYWu8bDc7/3WKZxY6whzbBr4/2wxlUD3lcKwF5ntys5KAOJ3jdgLHNERIj34JOwMVbHL3Jeq2QCtprnQC/PVt+Kzt9zM9xzQTCRdvkkBC6yxTkWyhrc3hSnt6H2OSzAYsyx/CWK+b8HRz9WFsGTvKnAxs9JGz5cXe7Fwtd0rNn+ZuUvKmE7nG+1U5T0zF5fQZ4yZgFEETikGCvOAEZXwxS66a+sUDvbXHgg79YLUGm7F6kaVtvRx+rYYU3nh9Ofe99AiMTil/7j5MzaW6LoRLAyaZdWHh4Ea+4aNcQLMx34wZD4C6fPJaA6FrVT5z9rPa3uAV2nQt0cNXgv2b7VcGnBa59cHxgqwfGRb0QoirVnBSKCqikm5tVG2QLQ56ZE3FSW9zfR+3qPM2jGI8tJVzeyzUdM1YsS//xHoseiBFVcWcKNr7/uJprSSuurGD5vxjetinJAq2b6EqXxKMW9Nv+ULOnfvN+CwMRSaNNGLE3US/Nw0p23Mig5pL0AqiZGVWQ5zBMXy4yFfbT3WSuchvWiNmtfgGl2XCseQCAzjyKugyAOriPPJ91wqUDly/EV4ucHtnd/WHlM5SVXLkmA/Tsd3lib+/vQdWNB1ji6jWJ7j3s7ZqzJb4kGF0xqZ9x+VM2G/v+paQ+F+QUG79yfKBEcbZX0l57lFSqxMYmr4tgPtAkiQOdlPxg0ZbO1IXwYnLRMAmF0khzCqDS8sehid3Zj+snMamVeunIcWyWCtIi/5O2AQgGAhAImzFNw0VoiAZm/EjOMW0WZpIVfdxcTCU5JEQRHo8uTXJHekD4pJNyzOZ8uwXXK6ecy9e+R4qxXnsCOg9grJgtDW3Gtjd2A9euHS2qfsDgn0CAokeM3sSELrAo8Wj/TJggevz03KweREcGJjvUCeGvmPZ+KCToeK0RztUEZtcAwOmwv0OUAhiQ36VG1SPG56ZWs2IZo/lU6wW+cowwxevKUEmqw+ww9kgDbIHjICWqdQsv31DEBLDtGjKCgQF7dj85oZb3R+BM0cNg6h+aAVCn/onZr+d5U/XxWhJ8AmuRswBkdgyrFvfrkpMHqO0CRaJK/UgokNTsos10AZGwxu0Z2ZTQMK8KcWyyID1u+qMKTIFPYui2AR+HgGfUwtMGGbQZP7EyuhcBAehx5LrpTRiwwqCgqa/YaH1emdmUH+FPHcFOQWYRvU18aFeI4dn4IRhJsgEebQp1J02trRuepQ6FCthrOTxx1MUOZkOCN8p8TeVV3Qx+1EyXVY29g3eAfKTu5VQg1/f3MY+amsF0x6RPXrnTGKjnBTD+YKA9jY/gD5PIb4M1ai6qPMcgfIsK20upMhp69nJ8ufTVF9RBAemJLpzU2iESKdTBJgfpqKO2fg1aXtvHcn5CQC+4Zjp2U+8qayqFNxfBLbG7IxeDRrzdbpQPwc9aZia91CKnbXNA3C/FztYC3ZOZRQ+G4W/bmkKUt1vo7s0cDeljzZx337wotzVE545aTBDBijVyl0Y1jv8ZT4KnvUmoZ5cU1PNBuXPFlG/3Vl9KfcyJB2rPu3pwKjXRCP0uU6kVnY7Ioi6gPO9GX9I0jX0z/6+QOUcJfDIVfq6nIffKJlPkv4Uti6pySSEAGapVh7eYq3vnGy8U1izddNRuIOf2SaKKP3QzoQncoyaxJXR2oK55C6NA1S9EkLnnuf7Kx6j+K5pJizoOA/I1UZIsadj8AjNkd5YH8rFeNWmeDfFeRbPycio5o01hdxFRMGH4nEksA7MWm7xYMnkomQlfQYYDUnBUvQ0VAIfx2if5AiX+aefQy3ymh9c53UAt5bramfaOigZAd+i07kVW/OK3UY/KuIU/ozJw1hFdJFAM4+v1u4aZndPk+yfpE1p0F2vzzlJ4TX26UwU8DGGayOpipyaqnr5PnDLdRACnnuF7kcGp0sLwHRtgujhIwxQNrcEhGh3TWGvXffQ3v5/H5YgLk7A2Kx/X5B6xQByvvG0amp/lRo15XgmWgVoLCjeYQhhH8lkx69D5AYIwDrUJ0UUJ/GqJlcNmcKF24fo+0OGa2KdRAOqLaf48cIk5AN2Al94moIdqQLDbCQQDOgkVPlzK9eYwYuUKtKxQU2hh5aXoKiRgbfCoIANJciRJnhkIKDfOVPxzVS3xx+dohnyZ4fhIUigw5kzq8J+lFRSNOmbvktCxuR8YDwcBb0gg/v45RujwPYHJZI+WMR70hb9E0g0QhoY0TyONnEjmnhCynvYfEQoEWbby9d9Vi9SWdpgAcc0J8ooc7NUpaxIYeWDo+aeRBaCVsuYDbahGMloc7V5W2uzkdZsrNirSnUuoEn/5NDXa/Wk6nKSw2KZSHf7f2hhuz/8c3ot0X1tcse3S/1OvDq5znrJSL80pqJDTPdfFxoCxm/kVxBQDI674CkZLzJOgCz/EHgO0PrG4Bfzu4MJZpDVuM75ghAAA=" alt="" aria-hidden="true" />
-  <div class="cta-band-inner">
-    <h2>Need an annual or service?</h2>
-    <p>Rotax-certified maintenance in Covington, Texas.</p>
-    <a class="btn btn-accent" href="tel:+18179396002">☎ Call (817) 939-6002</a>
-  </div>
-</section>
-
 <!-- 7 · CONTACT FOOTER -->
 <footer id="contact">
   <div class="wrap">
-    <p class="kicker">Contact</p>
-    <h2>Fly confidently.<br>Get expert service.</h2>
+    <h2>Need an annual or service?</h2>
+    <p class="foot-sub">Fly confidently. Get expert service.</p>
     <div class="foot-grid">
-      <div>
+      <div class="foot-contact">
         <a class="foot-phone" href="tel:+18179396002">(817) 939-6002</a><br>
         <a class="foot-mail" href="mailto:sales@e7aviation.com">sales@e7aviation.com</a>
         <div class="foot-ctas">
@@ -1163,17 +1150,19 @@
           <a class="btn btn-ghostlight" href="#/services/book">Book Service →</a>
         </div>
       </div>
+      <div class="foot-logozone">
+        <img class="foot-logo" src="assets/site/tag-texas-logo.png" alt="Texas TAG logo" />
+      </div>
       <div class="foot-block">
         <h4>Visit</h4>
         <p><b>E7 Aviation, LLC.</b><br>701 HCR 1430<br>Covington, Texas 76636<br>United States</p>
-        <p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=701+HCR+1430+Covington+TX+76636" target="_blank" rel="noopener">Get directions →</a></p>
-        <img class="foot-logo" src="assets/a001.png" alt="Texas TAG logo" />
+        <p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&query=701+HCR+1430+Covington+TX+76636" target="_blank" rel="noopener">Get directions →</a></p>
       </div>
       <div class="foot-block">
         <h4>Hours</h4>
         <p><b>Monday – Saturday</b><br>9:00am – 5:00pm</p>
-        <p style="margin-top:12px"><b>Sunday</b><br>12:00pm – 5:00pm</p>
-        <h4 style="margin-top:26px">Dealer</h4>
+        <p style="margin-top:6px"><b>Sunday</b><br>12:00pm – 5:00pm</p>
+        <h4 style="margin-top:11px">Dealer</h4>
         <p>Texas TAG — a division of the <b>Titanium Auto Gyro North America</b> distributorship.</p>
       </div>
     </div>
@@ -1182,6 +1171,9 @@
     </div>
   </div>
 </footer>
+
+<!-- CONTACT VIEW — lone copyright line (the footer block itself is hidden on the Contact page by the router) -->
+<div class="contact-copy" id="contactCopy" hidden>© E7 Aviation, LLC. — Covington, Texas</div>
 
 <!-- GALLERY LIGHTBOX — photos only, video cards are not included -->
 <div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery photo viewer" aria-hidden="true">
@@ -1333,6 +1325,11 @@
       if (!r || !r.page) r = parse();
       var all = document.querySelectorAll('.page');
       for (var i = 0; i < all.length; i++) all[i].classList.toggle('active', all[i].getAttribute('data-page') === r.page);
+      /* Contact view: no footer block — only the lone © line at the bottom. */
+      var footEl = document.querySelector('footer');
+      if (footEl) footEl.style.display = (r.page === 'contact') ? 'none' : '';
+      var ccEl = document.getElementById('contactCopy');
+      if (ccEl) ccEl.hidden = (r.page !== 'contact');
       var links = document.querySelectorAll('[data-nav]');
       for (var j = 0; j < links.length; j++) {
         var dn = links[j].getAttribute('data-nav');
