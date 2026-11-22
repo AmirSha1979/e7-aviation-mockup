@@ -408,7 +408,7 @@
   .gm-call:hover{background:var(--accent-dark)}
   .gm-foot p{margin:11px 0 0;font-family:var(--mono);font-size:14.5px;font-weight:600;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
   body.menu-locked{overflow:hidden;position:fixed;left:0;right:0;width:100%}
-  #svc-maintenance,#svc-inspections,#svc-rotax,#svc-fabrication,#svc-builder,#model-100,#model-115,#model-137{scroll-margin-top:96px}
+  #svc-maintenance,#svc-inspections,#svc-rotax,#svc-fabrication,#svc-builder,#model-100,#model-115,#model-137,#book,#serviceForm{scroll-margin-top:96px}
   @media(max-width:860px){.burger{display:flex}.nav-ctas{margin-left:auto}}
   @media(max-width:560px){.btn-call{display:none}}
   @media(min-width:861px){.glass-menu,.menu-scrim{display:none}}
@@ -489,7 +489,7 @@
       <a href="#/about" data-nav="about">About</a>
     </nav>
     <div class="nav-ctas">
-      <a class="btn-book" href="#/services/book">Book Service</a>
+      <a class="btn-book" href="#/services/serviceForm">Book Service</a>
       <a class="btn-call" href="tel:+18179396002">☎ (817) 939-6002</a>
     </div>
     <button class="burger" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="glassMenu"><span></span></button>
@@ -555,7 +555,7 @@
       <p class="hero-lede">E7 Aviation offers expert aircraft maintenance, repairs, and upgrades for gyroplanes and fixed-wing aircraft, focusing on safety, reliability, and customer satisfaction. Experience the thrill of flight — and fly confidently.</p>
       <div class="hero-ctas">
         <a class="btn btn-accent" href="tel:+18179396002">☎ Call (817) 939-6002</a>
-        <a class="btn btn-outline" href="#/services/book">Book Service →</a>
+        <a class="btn btn-outline" href="#/services/serviceForm">Book Service →</a>
         <a class="btn btn-outline" href="#/aircraft" data-nav="aircraft">New Aircraft</a>
       </div>
     </div>
@@ -626,7 +626,7 @@
       <a class="svc-teaser" href="#/services/svc-fabrication"><b>Custom Part Fabrication</b><span>Custom modifications and parts built in-house.</span><em>View service →</em></a>
       <a class="svc-teaser" href="#/services"><b>Bolly Props &amp; CFI Training</b><span>Bolly Prop sales and CFI training coordination.</span><em>View service →</em></a>
     </div>
-    <p style="margin-top:28px"><a class="btn btn-accent" href="#/services/book">Book Service →</a></p>
+    <p style="margin-top:28px"><a class="btn btn-accent" href="#/services/serviceForm">Book Service →</a></p>
   </div>
 </section>
 
@@ -685,7 +685,7 @@
             <li>Minor fixes through full overhauls</li>
             <li>Precision workmanship, transparent communication</li>
           </ul>
-          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/book">Book →</a></div>
+          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/serviceForm">Book →</a></div>
         </div>
       </article>
 
@@ -700,7 +700,7 @@
             <li>Continued airworthiness checks</li>
             <li>Gyroplane &amp; fixed-wing</li>
           </ul>
-          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/book">Book →</a></div>
+          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/serviceForm">Book →</a></div>
         </div>
       </article>
 
@@ -715,7 +715,7 @@
             <li>912 iS installation</li>
             <li>915 / 916 iS diagnostics</li>
           </ul>
-          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/book">Book →</a></div>
+          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/serviceForm">Book →</a></div>
         </div>
       </article>
 
@@ -730,7 +730,7 @@
             <li>Aircraft modifications</li>
             <li>Tailored solutions for your machine</li>
           </ul>
-          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/book">Book →</a></div>
+          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/serviceForm">Book →</a></div>
         </div>
       </article>
 
@@ -745,7 +745,7 @@
             <li>Builder assist program</li>
             <li>Certified technicians on site</li>
           </ul>
-          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/book">Book →</a></div>
+          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/serviceForm">Book →</a></div>
         </div>
       </article>
 
@@ -760,7 +760,7 @@
             <li>CFI training coordination</li>
             <li>Performance upgrades</li>
           </ul>
-          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/book">Book →</a></div>
+          <div class="card-foot"><span class="tbd">Info to be added</span><a href="#/services/serviceForm">Book →</a></div>
         </div>
       </article>
     </div>
@@ -1106,9 +1106,9 @@
     <div class="contact-grid">
       <div class="contact-card"><h3>Visit</h3><p><b>E7 Aviation, LLC.</b><br>701 HCR 1430<br>Covington, Texas 76636<br>United States</p><p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=701+HCR+1430+Covington+TX+76636" target="_blank" rel="noopener">Get directions →</a></p></div>
       <div class="contact-card"><h3>Hours</h3><p><b>Monday – Saturday</b><br>9:00am – 5:00pm</p><p style="margin-top:12px"><b>Sunday</b><br>12:00pm – 5:00pm</p></div>
-      <div class="contact-card"><h3>Dealer</h3><p>Texas TAG — a division of the <b>Titanium Auto Gyro North America</b> distributorship.</p><p style="margin-top:12px"><a href="#/services/book">Book service →</a></p><img class="foot-logo" src="assets/a001.png" alt="Texas TAG logo" style="filter:none;margin-top:16px" /></div>
+      <div class="contact-card"><h3>Dealer</h3><p>Texas TAG — a division of the <b>Titanium Auto Gyro North America</b> distributorship.</p><p style="margin-top:12px"><a href="#/services/serviceForm">Book service →</a></p><img class="foot-logo" src="assets/a001.png" alt="Texas TAG logo" style="filter:none;margin-top:16px" /></div>
     </div>
-    <p style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-accent" href="tel:+18179396002">☎ Call E7 Aviation</a><a class="btn btn-outline" href="#/services/book">Book Service →</a></p>
+    <p style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn btn-accent" href="tel:+18179396002">☎ Call E7 Aviation</a><a class="btn btn-outline" href="#/services/serviceForm">Book Service →</a></p>
   </div>
 </section>
 
@@ -1163,7 +1163,7 @@
         <a class="foot-mail" href="mailto:sales@e7aviation.com">sales@e7aviation.com</a>
         <div class="foot-ctas">
           <a class="btn btn-accent" href="tel:+18179396002">☎ Call E7 Aviation</a>
-          <a class="btn btn-ghostlight" href="#/services/book">Book Service →</a>
+          <a class="btn btn-ghostlight" href="#/services/serviceForm">Book Service →</a>
         </div>
       </div>
       <div class="foot-logozone">
@@ -1427,7 +1427,7 @@
       h = (typeof h === 'string') ? h : (window.location.hash || '');
       if (h.indexOf('#/') !== 0) {
         var map = {'#services':'services','#models':'aircraft','#preowned':'preowned','#gallery':'gallery','#contact':'contact','#book':'services','#about':'about','#top':'home','#rotax':'services'};
-        if (map[h]) return {page: map[h], anchor: h === '#book' ? 'book' : null};
+        if (map[h]) return {page: map[h], anchor: h === '#book' ? 'serviceForm' : null};
         if (h && h.charAt(0) === '#' && h.length > 1) {
           var id = h.slice(1);
           var el = document.getElementById(id);
@@ -1443,7 +1443,9 @@
       if (page === 'contact' && parts[1] === 'about') return {page: 'about', anchor: null};
       if (page === 'models' || page === 'explorer') page = 'aircraft';
       if (pages.indexOf(page) === -1) page = 'home';
-      return {page: page, anchor: parts[1] || null};
+      var anchor = parts[1] || null;
+      if (anchor === 'book') anchor = 'serviceForm';
+      return {page: page, anchor: anchor};
     }
     function show(r) {
       if (!r || !r.page) r = parse();
